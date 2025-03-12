@@ -1,1 +1,127 @@
-
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheda Cliente - PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Scheda Cliente</h1>
+  </header>
+  <main>
+    <form id="clienteForm">
+      <!-- Sezione Tipo di Cliente -->
+      <section>
+        <h2>Tipo di Cliente</h2>
+        <label>
+          <input type="radio" name="tipoCliente" value="Cliente Finale" required>
+          Cliente Finale
+        </label>
+        <label>
+          <input type="radio" name="tipoCliente" value="Rivenditore">
+          Rivenditore
+        </label>
+      </section>
+      <!-- Sezione Dati Anagrafici -->
+      <section>
+        <h2>Dati Anagrafici</h2>
+        <label>Ragione Sociale:
+          <input type="text" name="ragioneSociale" required>
+        </label>
+        <label>Sede Legale:
+          <input type="text" name="sedeLegale" required>
+        </label>
+        <label>Sede Operativa:
+          <input type="text" name="sedeOperativa">
+        </label>
+        <label>Telefono:
+          <input type="tel" name="telefono">
+        </label>
+        <label>Fax:
+          <input type="text" name="fax">
+        </label>
+        <label>Email:
+          <input type="email" name="email">
+        </label>
+        <label>Pec:
+          <input type="email" name="pec">
+        </label>
+        <label>Sito Internet:
+          <input type="url" name="sitoInternet">
+        </label>
+      </section>
+      <!-- Sezione Fatturazione -->
+      <section>
+        <h2>Fatturazione</h2>
+        <label>Partita IVA:
+          <input type="text" name="partitaIva">
+        </label>
+        <label>Codice Fiscale:
+          <input type="text" name="codiceFiscale">
+        </label>
+        <label>Codice Univoco:
+          <input type="text" name="codiceUnivoco">
+        </label>
+      </section>
+      <!-- Sezione Banca -->
+      <section>
+        <h2>Banca</h2>
+        <label>Banca d'appoggio:
+          <input type="text" name="banca">
+        </label>
+        <label>Agenzia:
+          <input type="text" name="agenzia">
+        </label>
+        <label>IBAN:
+          <input type="text" name="iban">
+        </label>
+      </section>
+      <!-- Sezione Spedizione -->
+      <section>
+        <h2>Spedizione</h2>
+        <label>Corriere convenzionato:
+          <input type="text" name="corriere">
+        </label>
+        <div>
+          <p>Disponete di muletto?</p>
+          <label>
+            <input type="radio" name="muletto" value="Si" required>
+            Si
+          </label>
+          <label>
+            <input type="radio" name="muletto" value="No">
+            No
+          </label>
+        </div>
+        <div id="consegnaDiv" style="display: none;">
+          <p>Se no, consegne con:</p>
+          <label>
+            <input type="radio" name="consegna" value="SPONDA IDRAULICA">
+            Sponda Idraulica
+          </label>
+          <label>
+            <input type="radio" name="consegna" value="GRU">
+            Gru
+          </label>
+        </div>
+      </section>
+      <!-- Sezione Data -->
+      <section>
+        <h2>Data</h2>
+        <label>
+          <input type="date" name="data" required>
+        </label>
+      </section>
+      <button type="submit">Genera Report TXT</button>
+    </form>
+    <div id="downloadSection"></div>
+  </main>
+  <footer>
+    <p>&copy; Cormach S.r.l. – Correggio Macchine</p>
+  </footer>
+</body>
+</html>
