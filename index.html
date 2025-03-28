@@ -67,30 +67,35 @@
           <input type="text" name="codiceUnivoco">
         </label>
       </section>
-      <!-- Sezione Banca -->
-      <section>
-        <h2>Banca</h2>
-        <label>Banca d'appoggio:
-          <input type="text" name="banca">
-        </label>
-        <label>Agenzia:
-          <input type="text" name="agenzia">
-        </label>
-        <label>IBAN:
-          <input type="text" name="iban">
-        </label>
-        <!-- NUOVA SEZIONE MODALITÀ PAGAMENTO -->
-        <label>Modalità Pagamento:
-          <select name="modalitaPagamento" required>
-            <option value="" disabled selected>Seleziona una modalità</option>
-            <option value="Bonifico Bancario">Bonifico Bancario</option>
-            <option value="Carta di Credito">Carta di Credito</option>
-            <option value="PayPal">PayPal</option>
-            <option value="Contrassegno">Contrassegno</option>
-            <option value="Finanziamento">Finanziamento</option>
-          </select>
-        </label>
-      </section>
+     <!-- Sezione Banca -->
+<section>
+  <h2>Banca</h2>
+  <label>Banca d'appoggio:
+    <input type="text" name="banca">
+  </label>
+  <label>Agenzia:
+    <input type="text" name="agenzia">
+  </label>
+  <label>IBAN:
+    <input type="text" name="iban">
+  </label>
+  <!-- NUOVA SEZIONE MODALITÀ PAGAMENTO -->
+  <label>Modalità Pagamento:
+    <select name="modalitaPagamento" required>
+      <option value="" disabled selected>Seleziona una modalità</option>
+      <option value="Bonifico Bancario">Bonifico Bancario</option>
+      <option value="Carta di Credito">Carta di Credito</option>
+      <option value="PayPal">PayPal</option>
+      <option value="Contrassegno">Contrassegno</option>
+      <option value="Finanziamento">Finanziamento</option>
+      <option value="Altro">Altro</option>
+    </select>
+  </label>
+  <!-- Campo per dettagli aggiuntivi -->
+  <label id="dettagliPagamentoLabel" style="display: none;">Dettagli Pagamento:
+    <input type="text" name="dettagliPagamento" placeholder="Inserisci dettagli aggiuntivi">
+  </label>
+</section>
       <!-- Sezione Spedizione -->
       <section>
         <h2>Spedizione</h2>
