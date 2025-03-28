@@ -1,14 +1,3 @@
-// Registrazione del service worker
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
-      console.log('ServiceWorker registrato con scope:', registration.scope);
-    }, function(err) {
-      console.error('ServiceWorker registrazione fallita:', err);
-    });
-  });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('clienteForm');
   const downloadSection = document.getElementById('downloadSection');
@@ -24,6 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         consegnaDiv.style.display = 'none';
       }
     });
+  });
+
+  // Gestione della visualizzazione del campo "Dettagli Pagamento"
+  const modalitaPagamentoSelect = document.querySelector('select[name="modalitaPagamento"]');
+  const dettagliPagamentoLabel = document.getElementById('dettagliPagamentoLabel');
+
+  modalitaPagamentoSelect.addEventListener('change', () => {
+    if (modalitaPagamentoSelect.value === 'Altro') {
+      dettagliPagamentoLabel.style.display = 'block';
+    } else {
+      dettagliPagamentoLabel.style.display = 'none';
+    }
   });
 
   form.addEventListener('submit', (e) => {
@@ -59,8 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
     report += 'Banca d\'appoggio: ' + formData.get('banca') + '\n';
     report += 'Agenzia: ' + formData.get('agenzia') + '\n';
     report += 'IBAN: ' + formData.get('iban') + '\n';
-    // Aggiunta della Modalità Pagamento
-    report += 'Modalità Pagamento: ' + formData.get('modalitaPagamento') + '\n\n';
+    report += 'Modalità Pagamento: ' + formData.get('modalitaPagamento') + '\n';
+    const dettagliPagamento = formData.get('dettagliPagamento');
+    if (dettagliPagamento) {
+      report += 'Dettagli Pagamento: ' + dettagliPagamento + '\n';
+    }
+    report += '\n';
 
     // Spedizione
     report += '--- Spedizione ---\n';
