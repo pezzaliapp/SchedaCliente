@@ -58,7 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
     report += '--- Banca ---\n';
     report += 'Banca d\'appoggio: ' + formData.get('banca') + '\n';
     report += 'Agenzia: ' + formData.get('agenzia') + '\n';
-    report += 'IBAN: ' + formData.get('iban') + '\n\n';
+    report += 'IBAN: ' + formData.get('iban') + '\n';
+    // Aggiunta della Modalità Pagamento
+    report += 'Modalità Pagamento: ' + formData.get('modalitaPagamento') + '\n\n';
 
     // Spedizione
     report += '--- Spedizione ---\n';
