@@ -79,6 +79,17 @@
         <label>IBAN:
           <input type="text" name="iban">
         </label>
+        <!-- NUOVA SEZIONE MODALITÀ PAGAMENTO -->
+        <label>Modalità Pagamento:
+          <select name="modalitaPagamento" required>
+            <option value="" disabled selected>Seleziona una modalità</option>
+            <option value="Bonifico Bancario">Bonifico Bancario</option>
+            <option value="Carta di Credito">Carta di Credito</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Contrassegno">Contrassegno</option>
+            <option value="Finanziamento">Finanziamento</option>
+          </select>
+        </label>
       </section>
       <!-- Sezione Spedizione -->
       <section>
